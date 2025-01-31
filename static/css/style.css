@@ -55,7 +55,7 @@ body {
     border-radius: var(--border-radius);
     text-align: center;
     transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(219, 14, 14, 0.8);
 }
 
 .upload-section:hover {
@@ -73,7 +73,7 @@ input[type="file"] {
 
 .file-label {
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    color: white;
+    color: rgb(15, 227, 40);
     padding: 14px 28px;
     border-radius: var(--border-radius);
     cursor: pointer;
