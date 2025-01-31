@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Review Bot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Code Review Bot</h1>
+            <p class="subtitle">Upload your code for instant AI-powered analysis</p>
+        </div>
+        <div class="upload-section">
+            <form id="codeForm">
+                <div class="file-input-wrapper">
+                    <input type="file" id="codeFile" accept=".py,.js,.cpp">
+                    <label for="codeFile" class="file-label">Choose File</label>
+                    <span id="fileName" class="file-name">No file chosen</span>
+                </div>
+                <button type="submit" class="analyze-btn">
+                    <span class="btn-text">Analyze Code</span>
+                    <div class="loader hidden"></div>
+                </button>
+            </form>
+        </div>
+        <div id="results" class="hidden">
+            <h2>Analysis Results</h2>
+            <div class="score-card">
+                <div class="total-score">
+                    <h3>Total Score</h3>
+                    <div class="score-circle">
+                        <span id="totalScore">0</span>
+                        <span class="score-max">/100</span>
+                    </div>
+                </div>
+                <div class="score-breakdown">
+                    <div class="score-item">
+                        <label>Efficiency</label>
+                        <div class="score-bar">
+                            <div class="bar-fill" id="efficiencyBar"></div>
+                            <span id="efficiencyScore">0</span>
+                        </div>
+                    </div>
+                    <div class="score-item">
+                        <label>Readability</label>
+                        <div class="score-bar">
+                            <div class="bar-fill" id="readabilityBar"></div>
+                            <span id="readabilityScore">0</span>
+                        </div>
+                    </div>
+                    <div class="score-item">
+                        <label>Security</label>
+                        <div class="score-bar">
+                            <div class="bar-fill" id="securityBar"></div>
+                            <span id="securityScore">0</span>
+                        </div>
+                    </div>
+                    <div class="score-item">
+                        <label>Complexity</label>
+                        <div class="score-bar">
+                            <div class="bar-fill" id="complexityBar"></div>
+                            <span id="complexityScore">0</span>
+                        </div>
+                    </div>
+                    <div class="score-item">
+                        <label>Error Handling</label>
+                        <div class="score-bar">
+                            <div class="bar-fill" id="errorHandlingBar"></div>
+                            <span id="errorHandlingScore">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="suggestions">
+                <h3>Suggestions for Improvement</h3>
+                <ul id="suggestionsList"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
